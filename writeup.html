@@ -12090,7 +12090,7 @@ The following part of will perform a <strong> grid search </strong> on the featu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_size</span> <span class="o">=</span> <span class="mi">3000</span>
@@ -12145,76 +12145,6 @@ The following part of will perform a <strong> grid search </strong> on the featu
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>sample_size:  6000
-colorspace: YCrCb  orient: 9 
- pix_per_cell: 16  cell_per_block: 2 C: 1  hist_bins: 16
-End of trial
-
-
-</pre>
-</div>
-</div>
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-4-68acf5887a0c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     36</span>               &#39;C:&#39;, C, &#39; hist_bins:&#39;, hist_bins)
-<span class="ansi-green-intense-fg ansi-bold">     37</span>         score, svc, X_scaler = train_and_evaluate(cars_sample, notcars_sample, colorspace, orient, pix_per_cell,
-<span class="ansi-green-fg">---&gt; 38</span><span class="ansi-red-fg">                                    cell_per_block, hog_channel, C, hist_bins, y)
-</span><span class="ansi-green-intense-fg ansi-bold">     39</span>         res<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;score&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>score<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span>         res<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;params&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span>colorspace<span class="ansi-blue-fg">,</span> orient<span class="ansi-blue-fg">,</span>pix_per_cell<span class="ansi-blue-fg">,</span> cell_per_block<span class="ansi-blue-fg">,</span>C<span class="ansi-blue-fg">,</span> hist_bins<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-3-ada332609763&gt;</span> in <span class="ansi-cyan-fg">train_and_evaluate</span><span class="ansi-blue-fg">(cars, notcars, colorspace, orient, pix_per_cell, cell_per_block, hog_channel, C, hist_bins, y)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>     car_features = extract_features_from_paths(cars, cspace=colorspace, orient=orient, 
-<span class="ansi-green-intense-fg ansi-bold">     12</span>                             pix_per_cell<span class="ansi-blue-fg">=</span>pix_per_cell<span class="ansi-blue-fg">,</span> cell_per_block<span class="ansi-blue-fg">=</span>cell_per_block<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">                             hog_channel=hog_channel, hist_bins=hist_bins)
-</span><span class="ansi-green-intense-fg ansi-bold">     14</span>     notcar_features = extract_features_from_paths(notcars, cspace=colorspace, orient=orient, 
-<span class="ansi-green-intense-fg ansi-bold">     15</span>                             pix_per_cell<span class="ansi-blue-fg">=</span>pix_per_cell<span class="ansi-blue-fg">,</span> cell_per_block<span class="ansi-blue-fg">=</span>cell_per_block<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-2-4047ac97fe12&gt;</span> in <span class="ansi-cyan-fg">extract_features_from_paths</span><span class="ansi-blue-fg">(img_file_paths, cspace, orient, pix_per_cell, cell_per_block, hog_channel, hist_bins)</span>
-<span class="ansi-green-intense-fg ansi-bold">     91</span>         feature_vec = extract_features(feature_image, orient=orient, 
-<span class="ansi-green-intense-fg ansi-bold">     92</span>                         pix_per_cell<span class="ansi-blue-fg">=</span>pix_per_cell<span class="ansi-blue-fg">,</span> cell_per_block<span class="ansi-blue-fg">=</span>cell_per_block<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 93</span><span class="ansi-red-fg">                                        hog_channel=hog_channel, hist_bins=hist_bins)
-</span><span class="ansi-green-intense-fg ansi-bold">     94</span> 
-<span class="ansi-green-intense-fg ansi-bold">     95</span>         <span class="ansi-red-fg"># Append the new feature vector to the features list</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-2-4047ac97fe12&gt;</span> in <span class="ansi-cyan-fg">extract_features</span><span class="ansi-blue-fg">(img, orient, pix_per_cell, cell_per_block, hog_channel, hist_bins)</span>
-<span class="ansi-green-intense-fg ansi-bold">     70</span>         <span class="ansi-green-fg">for</span> channel <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>feature_image<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     71</span>             hog_feat = get_hog_features(feature_image[:,:,channel], orient, pix_per_cell, cell_per_block, 
-<span class="ansi-green-fg">---&gt; 72</span><span class="ansi-red-fg">                                 vis=False, feature_vec=True)
-</span><span class="ansi-green-intense-fg ansi-bold">     73</span>             hog_features<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>hog_feat<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span>         hog_features <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>ravel<span class="ansi-blue-fg">(</span>hog_features<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-2-4047ac97fe12&gt;</span> in <span class="ansi-cyan-fg">get_hog_features</span><span class="ansi-blue-fg">(img, orient, pix_per_cell, cell_per_block, vis, feature_vec)</span>
-<span class="ansi-green-intense-fg ansi-bold">     24</span>         features = hog(img, orientations=orient, pixels_per_cell=(pix_per_cell, pix_per_cell),
-<span class="ansi-green-intense-fg ansi-bold">     25</span>                        cells_per_block<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span>cell_per_block<span class="ansi-blue-fg">,</span> cell_per_block<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> transform_sqrt<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 26</span><span class="ansi-red-fg">                        visualise=vis, feature_vector=feature_vec)
-</span><span class="ansi-green-intense-fg ansi-bold">     27</span>         <span class="ansi-red-fg"># print(&#39;get_hog_features size:&#39;,len(features))</span>
-<span class="ansi-green-intense-fg ansi-bold">     28</span>         <span class="ansi-green-fg">return</span> features
-
-<span class="ansi-green-fg">/home/puma/anaconda3/lib/python3.5/site-packages/skimage/feature/_hog.py</span> in <span class="ansi-cyan-fg">hog</span><span class="ansi-blue-fg">(image, orientations, pixels_per_cell, cells_per_block, visualise, transform_sqrt, feature_vector, normalise)</span>
-<span class="ansi-green-intense-fg ansi-bold">    138</span> 
-<span class="ansi-green-intense-fg ansi-bold">    139</span>     _hoghistogram.hog_histograms(gx, gy, cx, cy, sx, sy, n_cellsx, n_cellsy,
-<span class="ansi-green-fg">--&gt; 140</span><span class="ansi-red-fg">                                  orientations, orientation_histogram)
-</span><span class="ansi-green-intense-fg ansi-bold">    141</span> 
-<span class="ansi-green-intense-fg ansi-bold">    142</span>     <span class="ansi-red-fg"># now for each cell, compute the histogram</span>
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
-</div>
-</div>
-
 </div>
 </div>
 
